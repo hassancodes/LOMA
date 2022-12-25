@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="content">
+    <img class="bgimage" src="{{ url_for('static', filename='images/option1.png') }}" alt="background">
+    <div class="section-1">
+      <h1><span>LO</span>MA</h1>
+    </div>
+
+    <div class="main-div">
+      <div class="fix-pad">
+        <div>
+          <p class="tagline" align="center">
+            Select the type of Problem To Solve
+          </p>
+        </div>
+        <section class="section-methods">
+          <div class="methods">
+            <button class="btn">Combinations</button>
+            <button class="btn">Permutations</button>
+            <button class="btn">Arithmetic Squence</button>
+            <button class="btn">Geometric Sequence</button>
+            <button class="btn">Fibonacci</button>
+            <button class="btn">Summation</button>
+            <button class="btn">Addition</button>
+            <button class="btn">Subtraction</button>
+            <button class="btn">Mutiplication</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <div class="footer-div">
+      <footer>
+        <p>Made by Hassan with <span>Love<span>.</p>
+        <ul>
+          <li>
+            Github
+          </li>
+          <li>
+            Socials
+          </li>
+          <li>
+            <span>HireMe<span>
+          </li>
+        </ul>
+
+      </footer>
+
+    </div>
+  </div>
+</body>
+
+</html>
