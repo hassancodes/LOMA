@@ -29,6 +29,7 @@ html,body{
  --primary-color :#15C36B;
 }
 
+
 span{
     color: var(--primary-color);
 }
@@ -43,7 +44,7 @@ body{
     margin: 0vh 10vw 0vh 10vh;
 }
 .section-1{
-    text-align: center;
+    /* text-align: center; */
     padding-top:1rem;
     padding-bottom:1rem;
     background-color: rgb(255, 255, 255);

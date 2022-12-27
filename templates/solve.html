@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
-  <title>Document</title>
+  <title>LOMA</title>
 </head>
 
 <body>
@@ -14,33 +14,64 @@
   <div class="content">
     <img class="bgimage" src="{{ url_for('static', filename='images/option2.png') }}" alt="background">
     <div class="section-1">
+      <!-- <svg width="50px" height="50px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path fill="#000000"
+          d="M7.765 4.045a.75.75 0 10-1.03-1.09L2.237 7.203a.748.748 0 00-.001 1.093l4.499 4.25a.75.75 0 001.03-1.091L4.636 8.5h8.614a.75.75 0 000-1.5H4.636l3.129-2.955z" />
+        </svg> -->
       <h1><span>LO</span>MA</h1>
     </div>
 
     <div class="main-div">
       <!--Checking the type of problem-->
+
+
+      <!--Combinations Starts from here-->
+      <!-------------------------------->
       {% if data["type"] == "combination" %}
       <div class="fix-pad">
         <div>
-            <div>
+          <div>
             <p>formula :</p>
             <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
-            </div> 
+          </div>
         </div>
-        <form action="/">
-        <input placeholder="input1">
-        <input placeholder="input2">
-        <button>Submit</button>
-        <form>
+        <form method="POST" action="/calculate/combination">
+          <input name="n" placeholder="input1">
+          <input name="r" placeholder="input2">
+          <button type="submit">Submit</button>
+        </form>
         {% endif %}
+        <!--Combinations Ends here-->
+        <!-------------------------------->
 
-        {% if data["type"] == "add" %}
-        <h2>add lol</h2>
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+          {% if answer is defined %}
+          {{answer['integer']}}
+          </br>
+          {{answer['float']}}
+          </br>
+          {{answer['ratio']}}
           {% endif %}
-          
+        </div>
+
+
+
 
       </div>
     </div>
+
+
 
 
 
