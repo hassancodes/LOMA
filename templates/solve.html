@@ -12,33 +12,36 @@
 <body>
 
   <div class="content">
-    <img class="bgimage" src="{{ url_for('static', filename='images/option1.png') }}" alt="background">
+    <img class="bgimage" src="{{ url_for('static', filename='images/option2.png') }}" alt="background">
     <div class="section-1">
       <h1><span>LO</span>MA</h1>
     </div>
 
     <div class="main-div">
+      <!--Checking the type of problem-->
+      {% if data["type"] == "combination" %}
       <div class="fix-pad">
         <div>
-          <p class="tagline" align="center">
-            Select the type of Problem To Solve
-          </p>
+            <div>
+            <p>formula :</p>
+            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+            </div> 
         </div>
-        <section class="section-methods">
-          <div class="methods">
-            <button class="btn"><a href="/combinations">Combinations</a></button>
-            <button class="btn">Permutations</button>
-            <button class="btn">Arithmetic Squence</button>
-            <button class="btn">Geometric Sequence</button>
-            <button class="btn">Fibonacci</button>
-            <button class="btn">Summation</button>
-            <button class="btn">Addition</button>
-            <button class="btn">Subtraction</button>
-            <button class="btn">Mutiplication</button>
-          </div>
-        </section>
+        <form action="/">
+        <input placeholder="input1">
+        <input placeholder="input2">
+        <button>Submit</button>
+        <form>
+        {% endif %}
+
+        {% if data["type"] == "add" %}
+        <h2>add lol</h2>
+          {% endif %}
+          
+
       </div>
     </div>
+
 
 
     <div class="footer-div">
