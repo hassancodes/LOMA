@@ -36,13 +36,81 @@
           </div>
         </div>
         <form method="POST" action="/calculate/combination">
-          <input name="n" placeholder="input1">
-          <input name="r" placeholder="input2">
+          <input name="n" placeholder="input n">
+          <input name="r" placeholder="input r">
           <button type="submit">Submit</button>
         </form>
         {% endif %}
         <!--Combinations Ends here-->
         <!-------------------------------->
+
+
+
+
+      <!--Permuation Starts from here-->
+      <!-------------------------------->
+      {% if data["type"] == "permutation" %}
+      <div class="fix-pad">
+        <div>
+          <div>
+            <p>formula :</p>
+            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+          </div>
+        </div>
+        <form method="POST" action="/calculate/permutation">
+          <input name="n" placeholder="input n">
+          <input name="r" placeholder="input r">
+          <button type="submit">Submit</button>
+        </form>
+        {% endif %}
+        <!--Permutation Ends here-->
+        <!-------------------------------->
+
+
+
+              <!--Permuation Starts from here-->
+      <!-------------------------------->
+      {% if data["type"] == "arithmeticsequence" %}
+      <div class="fix-pad">
+        <div>
+          <div>
+            <p>formula :</p>
+            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+          </div>
+        </div>
+        <form method="POST" action="/calcseq/arithmeticsequence">
+          <input name="a1" placeholder="input the first term a1">
+          <input name="an" placeholder="input the nth term an">
+          <input name="d" placeholder="input the common difference (d)">
+          <button type="submit">Submit</button>
+        </form>
+        {% endif %}
+        <!--Permutation Ends here-->
+        <!-------------------------------->
+
+
+
+
+                      <!--Permuation Starts from here-->
+      <!-------------------------------->
+      {% if data["type"] == "geometricsequence" %}
+      <div class="fix-pad">
+        <div>
+          <div>
+            <p>formula :</p>
+            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+          </div>
+        </div>
+        <form method="POST" action="/calcseq/geometricsequence">
+          <input name="a1" placeholder="input the first term a1">
+          <input name="r" placeholder="input the common ratio (r)">
+          <input name="n" placeholder="input the nth term you want to find">
+          <button type="submit">Submit</button>
+        </form>
+        {% endif %}
+        <!--Permutation Ends here-->
+        <!-------------------------------->
+
 
 
 

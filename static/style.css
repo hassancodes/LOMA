@@ -13,6 +13,9 @@ html,body{
    
 }
 
+a{
+text-decoration: none;
+}
 
 .bgimage{
         position:absolute;
