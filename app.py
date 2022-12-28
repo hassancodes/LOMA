@@ -101,6 +101,7 @@ def calculate(problemtype):
             r = int(request.form['r'])
             # applying the formula of permutation which is 
             # n! /(n-r)!
+            #lets goo
             ans = factorial(n) /factorial(abs(n-r))
             answer = { 
                     "integer" : int(ans),
