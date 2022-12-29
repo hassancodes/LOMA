@@ -93,13 +93,7 @@ font-size: large;
 
 
 }
-.flexing{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin:auto;
-}
+
 /* solve.html */
 input{
     width:70%;
@@ -107,6 +101,30 @@ input{
     margin: 10px 0px;
     border-radius:1rem;
     border:none;
+}
+
+.flexing{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+.solvebtn{
+   width:10rem;
+   padding:1rem;
+   margin-top:1rem;
+   border-radius: 1rem;
+   border:none
+}
+
+.solvebtn:hover{
+    background-color:#7adaaa;
+    width:10rem;
+    padding:1.1rem;
+    color:white;
+    font-size: 15px;
 }
 
 .content {
@@ -135,6 +153,8 @@ li{
 .footer-div{
     position:absolute;
     bottom:0;
-    top:calc(100vh-80px);
+    top:calc(100vh);
     width:100vw;
 }
+
+
