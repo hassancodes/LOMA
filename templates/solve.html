@@ -47,72 +47,9 @@
 
 
 
-      <!--Permuation Starts from here-->
-      <!-------------------------------->
-      {% if data["type"] == "permutation" %}
-      <div class="fix-pad">
-        <div>
-          <div>
-            <p>formula :</p>
-            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
-          </div>
-        </div>
-        <form class="flexing" method="POST" action="/calculate/permutation">
-          <input name="n" placeholder="input n">
-          <input name="r" placeholder="input r">
-          <button class="solvebtn"  type="submit">Submit</button>
-        </form>
-        {% endif %}
-        <!--Permutation Ends here-->
+        <!--Permuation Starts from here-->
         <!-------------------------------->
-
-
-
-              <!--Permuation Starts from here-->
-      <!-------------------------------->
-      {% if data["type"] == "arithmeticsequence" %}
-      <div class="fix-pad">
-        <div>
-          <div>
-            <p>formula :</p>
-            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
-          </div>
-        </div>
-        <form class="flexing" method="POST" action="/calcseq/arithmeticsequence">
-          <input name="a1" placeholder="input the first term a1">
-          <input name="an" placeholder="input the nth term an">
-          <input name="d" placeholder="input the common difference (d)">
-          <button class="solvebtn"  type="submit">Submit</button>
-        </form>
-        {% endif %}
-        <!--Permutation Ends here-->
-        <!-------------------------------->
-
-
-
-
-                      <!--Permuation Starts from here-->
-      <!-------------------------------->
-      {% if data["type"] == "geometricsequence" %}
-      <div class="fix-pad">
-        <div>
-          <div>
-            <p>formula :</p>
-            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
-          </div>
-        </div>
-        <form class="flexing" method="POST" action="/calcseq/geometricsequence">
-          <input name="a1" placeholder="input the first term a1">
-          <input name="r" placeholder="input the common ratio (r)">
-          <input name="n" placeholder="input the nth term you want to find">
-          <button class="solvebtn"  type="submit">Submit</button>
-        </form>
-        {% endif %}
-        <!--Permutation Ends here-->
-        <!-------------------------------->
-
-
-        {% if data["type"] == "fibonacci" %}
+        {% if data["type"] == "permutation" %}
         <div class="fix-pad">
           <div>
             <div>
@@ -120,10 +57,10 @@
               <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
             </div>
           </div>
-          <form class="flexing" method="POST" action="/fibcalc/fibonacci">
-            <input name="n" placeholder="Enter the nth Term you want to get">
-            
-            <button class="solvebtn"  type="submit">Submit</button>
+          <form class="flexing" method="POST" action="/calculate/permutation">
+            <input name="n" placeholder="input n">
+            <input name="r" placeholder="input r">
+            <button class="solvebtn" type="submit">Submit</button>
           </form>
           {% endif %}
           <!--Permutation Ends here-->
@@ -131,6 +68,66 @@
 
 
 
+          <!--Permuation Starts from here-->
+          <!-------------------------------->
+          {% if data["type"] == "arithmeticsequence" %}
+          <div class="fix-pad">
+            <div>
+              <div>
+                <p>formula :</p>
+                <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+              </div>
+            </div>
+            <form class="flexing" method="POST" action="/calcseq/arithmeticsequence">
+              <input name="a1" placeholder="input the first term a1">
+              <input name="an" placeholder="input the nth term an">
+              <input name="d" placeholder="input the common difference (d)">
+              <button class="solvebtn" type="submit">Submit</button>
+            </form>
+            {% endif %}
+            <!--Permutation Ends here-->
+            <!-------------------------------->
+
+
+
+
+            <!--Permuation Starts from here-->
+            <!-------------------------------->
+            {% if data["type"] == "geometricsequence" %}
+            <div class="fix-pad">
+              <div>
+                <div>
+                  <p>formula :</p>
+                  <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+                </div>
+              </div>
+              <form class="flexing" method="POST" action="/calcseq/geometricsequence">
+                <input name="a1" placeholder="input the first term a1">
+                <input name="r" placeholder="input the common ratio (r)">
+                <input name="n" placeholder="input the nth term you want to find">
+                <button class="solvebtn" type="submit">Submit</button>
+              </form>
+              {% endif %}
+              <!--Permutation Ends here-->
+              <!-------------------------------->
+
+
+              {% if data["type"] == "fibonacci" %}
+              <div class="fix-pad">
+                <div>
+                  <div>
+                    <p>formula :</p>
+                    <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+                  </div>
+                </div>
+                <form class="flexing" method="POST" action="/fibcalc/fibonacci">
+                  <input name="n" placeholder="Enter the nth Term you want to get">
+
+                  <button class="solvebtn" type="submit">Submit</button>
+                </form>
+                {% endif %}
+                <!--Permutation Ends here-->
+                <!-------------------------------->
 
 
 
@@ -141,45 +138,55 @@
 
 
 
-        <div>
-          {% if answer is defined %}
-          {{answer['integer']}}
-          </br>
-          {{answer['float']}}
-          </br>
-          {{answer['ratio']}}
-          {% endif %}
-        </div>
+
+
+
+                <div class="present-answer">
+                  {% if answer is defined %}
+                  <h2 align=center>__Answers__</h2>
+                  </br>
+                  </br>
+                  <h4>Integer : {{answer['integer']}}</h4>
+                  </br>
+                  <h4>Float : {{answer['float']}}</h4>
+                  </br>
+                  {% endif %}
+                </div>
 
 
 
 
-      </div>
-    </div>
+              </div>
+            </div>
 
 
 
+            <div class="footer-div">
+              <footer>
+                <p>Made by Hassan with <span>Love<span>.</p>
+                <ul>
+                  <li>
+                    Github
+                  </li>
+                  <li>
+                    Socials
+                  </li>
+                  <li>
+                    <span>HireMe<span>
+                  </li>
+                </ul>
 
+              </footer>
 
-    <div class="footer-div">
-      <footer>
-        <p>Made by Hassan with <span>Love<span>.</p>
-        <ul>
-          <li>
-            Github
-          </li>
-          <li>
-            Socials
-          </li>
-          <li>
-            <span>HireMe<span>
-          </li>
-        </ul>
-
-      </footer>
-
-    </div>
-  </div>
+            </div>
+          </div>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js'
+          integrity="sha512-gsEItzcNkWxfxHjr4BaEZAd9YuRWYjxnj7c/yukcZ0/nWehUb5TjJNyyv1ApCU2DFH/qgw+stFZHPOKnoQnIuQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js'
+          integrity="sha512-ko44b+LlYXwGZI6Gey6Tgrhew9JEPdSE6m7FqDyGGPDW+dDOjsCElEtiUIRRtCXRNHwKheBCnHCQSMdUz/pgkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src={{url_for('static' , filename='script.js')}}></script>
 </body>
 
 </html>

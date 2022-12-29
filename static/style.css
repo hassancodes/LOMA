@@ -96,7 +96,7 @@ font-size: large;
 
 /* solve.html */
 input{
-    width:70%;
+    width:60vw;
     padding:1rem;
     margin: 10px 0px;
     border-radius:1rem;
@@ -117,6 +117,16 @@ input{
    margin-top:1rem;
    border-radius: 1rem;
    border:none
+}
+
+.present-answer{
+    background-color: white;
+    width: 20vh;
+    margin:auto;
+    border-radius:0.8rem;
+    margin-top:40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .solvebtn:hover{
@@ -153,7 +163,7 @@ li{
 .footer-div{
     position:absolute;
     bottom:0;
-    top:calc(100vh);
+    top:calc(95.4vh);
     width:100vw;
 }
 
