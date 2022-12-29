@@ -1,6 +1,7 @@
 from flask import Flask,request,render_template,redirect
 from math import factorial
 from fractions import Fraction
+from fib import fib
 app = Flask(__name__)
 
 @app.route("/")
@@ -46,6 +47,17 @@ def geometricsequence():
     prob_data = {
         "type":"geometricsequence",
         "totalInput" : 3,
+    }
+    return render_template("solve.html", data=prob_data)
+
+
+
+# fibonacci
+@app.route("/fibonacci", methods=["GET","POST"])
+def fibonacci():
+    prob_data = {
+        "type":"fibonacci",
+        "totalInput" :1,
     }
     return render_template("solve.html", data=prob_data)
 
@@ -112,10 +124,6 @@ def calculate(problemtype):
             return render_template("solve.html",data=prob_data,answer=answer)
                 
         # #####------permuation------########## ends here
-               
-        
-        
-        
         else:
             return False
     else:
@@ -172,6 +180,25 @@ def calcseq(problemtype):
         return redirect(f"/{arithmeticsequence}")
 
 
+
+@app.route('/fibcalc/<problemtype>',methods=["GET","POST"])
+def fibcalc(problemtype):
+    prob_data = {
+        "type":"fibonacci",
+        "totalInput" :1,
+    }
+    if problemtype=="fibonacci":
+        if request.form["n"]:
+            n = request.form['n']
+            ans = fib(int(n))
+            answer = { 
+                "integer" : int(ans),
+                "float":float(ans),
+                "ratio": Fraction(ans)
+                    }
+            return render_template("solve.html",data=prob_data,answer=answer)
+        else:
+            return redirect(f"/{problemtype}")
 
 if __name__ == "__main__":
     app.run(debug=True)

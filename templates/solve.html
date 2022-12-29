@@ -112,6 +112,24 @@
         <!-------------------------------->
 
 
+        {% if data["type"] == "fibonacci" %}
+        <div class="fix-pad">
+          <div>
+            <div>
+              <p>formula :</p>
+              <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+            </div>
+          </div>
+          <form method="POST" action="/fibcalc/fibonacci">
+            <input name="n" placeholder="Enter the nth Term you want to get">
+            
+            <button type="submit">Submit</button>
+          </form>
+          {% endif %}
+          <!--Permutation Ends here-->
+          <!-------------------------------->
+
+
 
 
 
