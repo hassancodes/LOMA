@@ -15,6 +15,7 @@ html,body{
 
 a{
 text-decoration: none;
+color:var(--primary-color)
 }
 
 .bgimage{
@@ -167,4 +168,19 @@ li{
     width:100vw;
 }
 
+/* css for mobile responsive screen */
+@media only screen and (max-width: 700px) {
+    .footer-div{
+        text-align:center;
+        background-color: white;
+        display:flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        /* width: 100%; */
+    }
+    .footer-links{
+        display:none;
+    }
+  }
 
