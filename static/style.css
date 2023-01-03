@@ -182,5 +182,9 @@ li{
     .footer-links{
         display:none;
     }
+    .tagline{
+        font-size: 6vw;
+    }
+    
   }
 
