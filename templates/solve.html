@@ -30,9 +30,12 @@
       {% if data["type"] == "combination" %}
       <div class="fix-pad">
         <div>
-          <div>
+          <div class="formula-div">
+
+            
             <p>formula :</p>
-            <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+            <img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >
+
           </div>
         </div>
         <form class="flexing" method="POST" action="/calculate/combination">
