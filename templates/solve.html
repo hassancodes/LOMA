@@ -55,9 +55,9 @@
         {% if data["type"] == "permutation" %}
         <div class="fix-pad">
           <div>
-            <div>
+            <div class="formula-div">
               <p>formula :</p>
-              <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+              <img class="formula-image" src="{{url_for('static', filename='formulae/perm.png')}}" >
             </div>
           </div>
           <form class="flexing" method="POST" action="/calculate/permutation">
@@ -76,9 +76,9 @@
           {% if data["type"] == "arithmeticsequence" %}
           <div class="fix-pad">
             <div>
-              <div>
+              <div class="formula-div">
                 <p>formula :</p>
-                <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+                <img class="formula-image" src="{{url_for('static', filename='formulae/as.png')}}" >
               </div>
             </div>
             <form class="flexing" method="POST" action="/calcseq/arithmeticsequence">
@@ -99,9 +99,9 @@
             {% if data["type"] == "geometricsequence" %}
             <div class="fix-pad">
               <div>
-                <div>
+                <div class="formula-div">
                   <p>formula :</p>
-                  <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+                  <img class="formula-image" src="{{url_for('static', filename='formulae/gs.png')}}" >
                 </div>
               </div>
               <form class="flexing" method="POST" action="/calcseq/geometricsequence">
@@ -118,9 +118,9 @@
               {% if data["type"] == "fibonacci" %}
               <div class="fix-pad">
                 <div>
-                  <div>
+                  <div class="formula-div">
                     <p>formula :</p>
-                    <!--<img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >-->
+                    <img class="formula-image" src="{{url_for('static', filename='formulae/fib.png')}}" >
                   </div>
                 </div>
                 <form class="flexing" method="POST" action="/fibcalc/fibonacci">
