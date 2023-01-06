@@ -1,2 +1,2 @@
 # Result
-![Result](lomaimg.png)
+![Result](result.png)
