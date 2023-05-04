@@ -183,6 +183,29 @@
 
 
 
+            <!--Continuous Interest Starts here-->
+              <!-------------------------------->
+              {% if data["type"] == "continuousinterest" %}
+              <div class="fix-pad">
+                <div>
+                  <div class="formula-div">
+                    <p>formula :</p>
+                    <img class="formula-image" src="{{url_for('static', filename='formulae/continuousinterest.png')}}">
+                  </div>
+                </div>
+                <form class="flexing" method="POST" action="/intcalc/contint">
+                  <input name="p" placeholder="Enter the Principal Amount">
+                  <input name="r" placeholder="Enter the Rate of Interest">
+                  <input name="t" placeholder="number of time periods elapsed">
+
+                  <button class="solvebtn" type="submit">Submit</button>
+                </form>
+                {% endif %}
+              <!--Continuous Interest end here-->
+                <!-------------------------------->
+
+
+
 
 
 
@@ -191,9 +214,9 @@
                   <h2 align=center>__Answers__</h2>
                   </br>
                   </br>
-                  <h4>Integer : {{answer['integer']}}</h4>
+                  <h4>{{answer['integer']}}</h4>
                   </br>
-                  <h4>Float : {{answer['float']}}</h4>
+                  <h4>{{answer['float']}}</h4>
                   </br>
                   {% endif %}
                 </div>

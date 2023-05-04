@@ -2,6 +2,7 @@ from flask import Flask,request,render_template,redirect
 from math import factorial
 from fractions import Fraction
 from fib import fib
+from math import exp
 app = Flask(__name__)
 
 
@@ -93,6 +94,15 @@ def compoundinterest():
     return render_template("solve.html",data=prob_data)
     
 
+
+#continuousinterest 
+@app.route('/contint',methods=["GET","POST"])
+def continuousinterest():
+    prob_data = {
+        "type":"continuousinterest",
+        "totalInput" :3,
+    }
+    return render_template("solve.html",data=prob_data)
 
 
 
@@ -285,6 +295,31 @@ def intcalc(problemtype):
         else:
             return redirect("/intcalc/compint")
         
+        
+    prob_data = {
+        "type":"continuousinterest",
+        "totalInput" :3,
+    }
+    if problemtype=="contint":
+        if request.form:
+            p =  request.form["p"]
+            r =float(request.form["r"])/100
+            t=request.form["t"]
+            
+            continuousinterest = int(p)*exp(r*int(t))
+            answer={
+                "integer":int(continuousinterest),
+                "float": "{:,.2f}".format(float(continuousinterest))
+            
+              }
+            return render_template("solve.html",data=prob_data,answer=answer)
+        else:
+            return redirect("/intcalc/contint")
+            
+    
+    
+    
+    
         
         
 if __name__ == "__main__":
