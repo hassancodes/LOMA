@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
-  <title>LOMA | LOVE MATH TOOL</title>
+  <title>LOMA | A TOOL FOR MATH LOVERS</title>
 </head>
 
 <body>
@@ -32,9 +32,9 @@
         <div>
           <div class="formula-div">
 
-            
+
             <p>formula :</p>
-            <img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}" >
+            <img class="formula-image" src="{{url_for('static', filename='formulae/combin.png')}}">
 
           </div>
         </div>
@@ -57,7 +57,7 @@
           <div>
             <div class="formula-div">
               <p>formula :</p>
-              <img class="formula-image" src="{{url_for('static', filename='formulae/perm.png')}}" >
+              <img class="formula-image" src="{{url_for('static', filename='formulae/perm.png')}}">
             </div>
           </div>
           <form class="flexing" method="POST" action="/calculate/permutation">
@@ -78,7 +78,7 @@
             <div>
               <div class="formula-div">
                 <p>formula :</p>
-                <img class="formula-image" src="{{url_for('static', filename='formulae/as.png')}}" >
+                <img class="formula-image" src="{{url_for('static', filename='formulae/as.png')}}">
               </div>
             </div>
             <form class="flexing" method="POST" action="/calcseq/arithmeticsequence">
@@ -101,7 +101,7 @@
               <div>
                 <div class="formula-div">
                   <p>formula :</p>
-                  <img class="formula-image" src="{{url_for('static', filename='formulae/gs.png')}}" >
+                  <img class="formula-image" src="{{url_for('static', filename='formulae/gs.png')}}">
                 </div>
               </div>
               <form class="flexing" method="POST" action="/calcseq/geometricsequence">
@@ -115,12 +115,14 @@
               <!-------------------------------->
 
 
+              <!--fibonacci Starts here-->
+              <!-------------------------------->
               {% if data["type"] == "fibonacci" %}
               <div class="fix-pad">
                 <div>
                   <div class="formula-div">
                     <p>formula :</p>
-                    <img class="formula-image" src="{{url_for('static', filename='formulae/fib.png')}}" >
+                    <img class="formula-image" src="{{url_for('static', filename='formulae/fib.png')}}">
                   </div>
                 </div>
                 <form class="flexing" method="POST" action="/fibcalc/fibonacci">
@@ -129,8 +131,55 @@
                   <button class="solvebtn" type="submit">Submit</button>
                 </form>
                 {% endif %}
-                <!--Permutation Ends here-->
+                <!--Fibonacci Ends here-->
                 <!-------------------------------->
+
+
+              <!--Simple Interest Starts here-->
+              <!-------------------------------->
+              {% if data["type"] == "simpleinterest" %}
+              <div class="fix-pad">
+                <div>
+                  <div class="formula-div">
+                    <p>formula :</p>
+                    <img class="formula-image" src="{{url_for('static', filename='formulae/simpleinterest.png')}}">
+                  </div>
+                </div>
+                <form class="flexing" method="POST" action="/intcalc/simpleinterest">
+                  <input name="p" placeholder="Enter the Principal Amount">
+                  <input name="r" placeholder="Enter the Rate of Interest">
+                  <input name="t" placeholder="Enter the duration">
+
+                  <button class="solvebtn" type="submit">Submit</button>
+                </form>
+                {% endif %}
+                <!--Simple interest Ends here-->
+                <!-------------------------------->
+
+
+
+              <!--Compound Interest Starts here-->
+              <!-------------------------------->
+              {% if data["type"] == "compoundinterest" %}
+              <div class="fix-pad">
+                <div>
+                  <div class="formula-div">
+                    <p>formula :</p>
+                    <img class="formula-image" src="{{url_for('static', filename='formulae/compint.png')}}">
+                  </div>
+                </div>
+                <form class="flexing" method="POST" action="/intcalc/compint">
+                  <input name="p" placeholder="Enter the Principal Amount">
+                  <input name="r" placeholder="Enter the Rate of Interest">
+                  <input name="n" placeholder="number of times interest applied">
+                  <input name="t" placeholder="number of time periods elapsed">
+
+                  <button class="solvebtn" type="submit">Submit</button>
+                </form>
+                {% endif %}
+                <!--Compound interest Ends here-->
+                <!-------------------------------->
+
 
 
 
@@ -171,18 +220,18 @@
                     <span><a href="https://www.upwork.com/freelancers/~018951e163de7f6b41?viewMode=1">HireMe</a><span>
                   </li>
                 </ul>
-        
+
               </footer>
-        
+
             </div>
           </div>
           <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js'
-          integrity="sha512-gsEItzcNkWxfxHjr4BaEZAd9YuRWYjxnj7c/yukcZ0/nWehUb5TjJNyyv1ApCU2DFH/qgw+stFZHPOKnoQnIuQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js'
-          integrity="sha512-ko44b+LlYXwGZI6Gey6Tgrhew9JEPdSE6m7FqDyGGPDW+dDOjsCElEtiUIRRtCXRNHwKheBCnHCQSMdUz/pgkw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src={{url_for('static' , filename='script.js')}}></script>
+            integrity="sha512-gsEItzcNkWxfxHjr4BaEZAd9YuRWYjxnj7c/yukcZ0/nWehUb5TjJNyyv1ApCU2DFH/qgw+stFZHPOKnoQnIuQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js'
+            integrity="sha512-ko44b+LlYXwGZI6Gey6Tgrhew9JEPdSE6m7FqDyGGPDW+dDOjsCElEtiUIRRtCXRNHwKheBCnHCQSMdUz/pgkw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script src={{url_for('static' , filename='script.js')}}></script>
 </body>
 
 </html>

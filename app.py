@@ -4,6 +4,13 @@ from fractions import Fraction
 from fib import fib
 app = Flask(__name__)
 
+
+
+''' Reading Notes 
+totalInput means the total number of input required. 
+for example combonation needs 2 input to work properly.
+
+'''
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -63,6 +70,28 @@ def fibonacci():
 
 
 
+# simpleInterest
+@app.route("/simpleinterest",methods=["GET","POST"])
+def simpleinterest():
+    prob_data = {
+        "type":"simpleinterest",
+        "totalInput" :3,
+    }
+    return render_template("solve.html",data=prob_data)
+        
+    
+
+
+#CompoundInterest
+@app.route("/compint", methods=["GET","POST"])
+def compoundinterest():
+    prob_data = {
+        "type":"compoundinterest",
+        "totalInput" :3,
+    }
+    
+    return render_template("solve.html",data=prob_data)
+    
 
 
 
@@ -80,10 +109,12 @@ def fibonacci():
 
 
 
+'''
+Below functions are the endpoints that calculate and return the answer to the solve.html
+'''
 
 
-
-# this function will calculate and
+# for combinations and permutations
 @app.route("/calculate/<problemtype>", methods=["POST"])
 def calculate(problemtype):
     prob_data = {
@@ -132,6 +163,7 @@ def calculate(problemtype):
 
 
 
+# for arithmetic and geometric sequence
 @app.route("/calcseq/<problemtype>",methods=["POST"])
 def calcseq(problemtype):
     arithmeticsequence = {
@@ -181,6 +213,7 @@ def calcseq(problemtype):
 
 
 
+# for calculating fibonacci
 @app.route('/fibcalc/<problemtype>',methods=["GET","POST"])
 def fibcalc(problemtype):
     prob_data = {
@@ -200,5 +233,59 @@ def fibcalc(problemtype):
         else:
             return redirect(f"/{problemtype}")
 
+
+
+
+
+
+@app.route("/intcalc/<problemtype>", methods=["POST"])
+def intcalc(problemtype):
+    prob_data = {
+        "type":"simpleinterest",
+        "totalInput" :3,
+    }
+    
+    if problemtype=="simpleinterest":
+        if request.form:
+            p = request.form["p"]
+            r= request.form["r"]
+            t = request.form["t"]
+            simpleinterest=(int(p) * float(r) * int(t))/100
+            answer={
+                "integer":int(simpleinterest),
+                "float": float(simpleinterest)
+            
+              }
+        
+            return render_template("solve.html",data=prob_data,answer=answer)
+        else:
+            return redirect(f"/{problemtype}")
+        
+    
+    prob_data = {
+        "type":"compoundinterest",
+        "totalInput" :4,
+    }
+    
+    if problemtype=="compint":
+        if request.form:
+            p =  request.form["p"]
+            r =request.form["r"]
+            n=request.form["n"]
+            t=request.form["t"]
+            compoundinterest =int(p)*((1+ ((int(r)/100)/int(n)))**(int(n)*int(t)))
+            answer={
+                "integer":int(compoundinterest),
+                "float": float(compoundinterest)
+            
+              }
+            
+            
+            return render_template("solve.html",data=prob_data,answer=answer)
+        else:
+            return redirect("/intcalc/compint")
+        
+        
+        
 if __name__ == "__main__":
     app.run(debug=True)
