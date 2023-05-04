@@ -9,10 +9,16 @@
 * Fibonacci
 * Simple Interest
 * Compound Interest
+* continuous interest
+
 
 
 
 # Currently working on 
 * Adding more functions
-    * Continuous Interest
     * Half life
+
+
+# Design Features:
+    * need work on mobile design
+    * add a sidebar for functions.
