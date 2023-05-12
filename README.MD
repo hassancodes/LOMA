@@ -22,3 +22,5 @@
 # Design Features:
     * need work on mobile design
     * add a sidebar for functions.
+    * need to add a navbar
+
