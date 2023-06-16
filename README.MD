@@ -18,6 +18,7 @@
 * Adding more functions
     * Half life
 
+# may add dervatives and integral
 
 # Design Features:
     * need work on mobile design
